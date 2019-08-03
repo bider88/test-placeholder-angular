@@ -33,7 +33,7 @@ export class PostComponent implements OnInit {
 
   search(searchForm: NgForm) {
     if (searchForm.valid) {
-      this.router.navigate(['/busqueda', this.textSearch]);
+      this.router.navigate(['/busqueda', this.textSearch.trim()]);
       this.textSearch = null;
     }
   }

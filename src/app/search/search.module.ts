@@ -4,7 +4,7 @@ import { SearchRoutingModule } from './search-routing.module';
 import { SearchComponent } from './components/search/search.component';
 import { CommonsModule } from '../commons/commons.module';
 import { SearchResolveService } from './services/search-resolve.service';
-import { SearchService } from './services/search.service';
+import { PostService } from '../post/services/post.service';
 
 @NgModule({
   declarations: [SearchComponent],
@@ -14,7 +14,7 @@ import { SearchService } from './services/search.service';
   ],
   providers: [
     SearchResolveService,
-    SearchService
+    PostService
   ]
 })
 export class SearchModule { }
