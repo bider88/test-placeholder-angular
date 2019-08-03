@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../services/post.service';
 import { PostInterface } from 'src/app/commons/interfaces/post.interface';
 import { Observable } from 'rxjs';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -12,9 +14,13 @@ import { Observable } from 'rxjs';
 export class PostComponent implements OnInit {
 
   posts: Observable<PostInterface[]>;
+  searchForm: NgForm;
+  textSearch: string;
+  searchParam: string;
 
   constructor(
-    private postService: PostService
+    private postService: PostService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -23,7 +29,14 @@ export class PostComponent implements OnInit {
 
   getPosts() {
     this.posts = this.postService.getPosts();
-    // console.log(this.postService.getPosts().subscribe());
+  }
+
+  search(searchForm: NgForm) {
+    if (searchForm.valid) {
+      console.log(searchForm.value);
+      this.router.navigate(['/busqueda', this.textSearch]);
+      this.textSearch = null;
+    }
   }
 
 }

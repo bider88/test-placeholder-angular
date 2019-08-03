@@ -1,5 +1,20 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container text-center">
+    <h1 class="display-4">Placeholder</h1>
+    <form #searchForm="ngForm" (ngSubmit)="search(searchForm)">
+      <div class="form-row">
+        <div class="form-group col-md-3"></div>
+        <div class="form-group col-md-6">
+          <input type="search" autofocus class="form-control" [(ngModel)]="textSearch" id="textSearch" name="textSearch"
+            required>
+        </div>
+        <div class="form-group col-md-4"></div>
+      </div>
+    </form>
+    <p class="lead">Search anything.</p>
+  </div>
+</div>
 <div class="container">
-  <app-nav></app-nav>
   <span *ngIf="!posts"><i>Loading...</i></span>
   <div class="row">
     <div class="col-4" *ngFor="let post of posts | async">

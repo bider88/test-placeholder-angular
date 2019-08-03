@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: './post/post.module#PostModule'
   },
   {
+    path: 'busqueda',
+    loadChildren: './search/search.module#SearchModule'
+  },
+  {
     path: '**',
     redirectTo: ''
   }
