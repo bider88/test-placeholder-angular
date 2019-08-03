@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: ':search',
     component: SearchComponent,
-    // resolve: { search: SearchResolveService }
+    resolve: { search: SearchResolveService }
   }
 ];
 

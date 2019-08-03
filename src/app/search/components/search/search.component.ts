@@ -8,8 +8,6 @@ import { PostInterface } from 'src/app/commons/interfaces/post.interface';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-
-  search: string;
   posts: PostInterface[];
 
   constructor(
@@ -18,12 +16,7 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activateRoute.params.subscribe(
-      param => {
-        this.search = param['search'];
-        console.log(this.search);
-      }
-    );
+    this.posts = this.activateRoute.snapshot.data.search;
   }
 
 

@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { SearchService } from './search.service';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
+import { PostInterface } from 'src/app/commons/interfaces/post.interface';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class SearchResolveService implements Resolve<any> {
+@Injectable()
+export class SearchResolveService implements Resolve<PostInterface[]> {
 
   constructor(
     private searchService: SearchService
