@@ -1,0 +1,16 @@
+<div class="container">
+  <app-nav></app-nav>
+  <span *ngIf="!posts"><i>Loading...</i></span>
+  <div class="row">
+    <div class="col-4" *ngFor="let post of posts | async">
+      <div class="card p-5 mb-2">
+        <a [routerLink]="['/', post.id]">
+          <h4>{{post.title}}</h4>
+        </a>
+        <p>
+          {{post.body}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
