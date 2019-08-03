@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SearchComponent } from './components/search/search.component';
+import { SearchResolveService } from './services/search-resolve.service';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':search',
     component: SearchComponent,
-    children: [
-      {
-        path: ':search'
-      }
-    ]
+    // resolve: { search: SearchResolveService }
   }
 ];
 

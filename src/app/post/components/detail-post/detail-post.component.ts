@@ -22,7 +22,6 @@ export class DetailPostComponent implements OnInit {
 
   ngOnInit() {
     this.postId = this.activateRoute.snapshot.params['postId'];
-    console.log(this.postId);
     this.getPostByParam();
   }
 

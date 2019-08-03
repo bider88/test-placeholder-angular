@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PostInterface } from 'src/app/commons/interfaces/post.interface';
 
 @Component({
   selector: 'app-search',
@@ -9,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SearchComponent implements OnInit {
 
   search: string;
+  posts: PostInterface[];
 
   constructor(
     private activateRoute: ActivatedRoute
@@ -18,10 +20,10 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.activateRoute.params.subscribe(
       param => {
-        console.log(param);
+        this.search = param['search'];
+        console.log(this.search);
       }
     );
-    console.log(this.search);
   }
 
 
